@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy Policy · ED Hotspots &amp; Landables Finder</title>
+  <meta name="description" content="How ED Hotspots & Landables Finder v7.11 uses Google OAuth, Google Sheets, Spansh and local files.">
+  <link rel="canonical" href="https://littlejacket99.github.io/privacy/">
+  <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header><div class="wrap"><nav aria-label="Main navigation"><a class="brand" href="/">ED Hotspots &amp; Landables Finder</a><div class="nav-links"><a href="/">Home</a><a href="https://github.com/LittleJacket99/ED-Hotspots-Landables-Finder">GitHub</a><a href="/privacy/" aria-current="page">Privacy Policy</a></div></nav></div></header>
+<main id="main" class="wrap policy">
+<p class="eyebrow">Your data</p><h1>Privacy Policy</h1><p class="note">Last updated: September 13, 2026 · Applies to application v7.11 and this website.</p>
+<p>ED Hotspots &amp; Landables Finder is a desktop tool maintained by <a href="https://github.com/LittleJacket99">LittleJacket99</a>. It searches Elite Dangerous game data through Spansh and uses a Google Spreadsheet for scan inputs and results. This policy describes the behavior of the published v7.11 source code.</p>
+<h2>Google OAuth and permissions</h2>
+<p>When you connect a spreadsheet, the app uses Google OAuth to open Google's authorization flow in your browser. Google handles your sign-in; the app does not receive your Google password. A temporary local browser callback completes authorization. The app receives tokens that allow it to call Google APIs on your behalf.</p>
+<p>v7.11 requests <code>https://www.googleapis.com/auth/spreadsheets</code>. This permission allows viewing, editing, creating and deleting all your Google Sheets spreadsheets. It is broader than access to a single selected file. The app's implemented operations target the spreadsheet you connect and the official template; this is application behavior, not a restriction enforced by the scope. It does not request Gmail, Contacts or Google profile scopes. See <a href="https://developers.google.com/workspace/sheets/api/scopes">Google's scope documentation</a>.</p>
+<h2>Google data read and written</h2>
+<ul>
+<li><strong>Connection:</strong> the app uses the spreadsheet ID you provide and reads spreadsheet titles, tab metadata and relevant sheet structure.</li>
+<li><strong>Scan inputs:</strong> it reads system names, scan options, filters and related control cells from the Hotspots Finder tab to perform your requested search.</li>
+<li><strong>Results:</strong> it writes generated system lists, hotspot and planet results, counters and status information to the connected spreadsheet.</li>
+<li><strong>Maintenance:</strong> it reads relevant existing values, notes and formatting to preserve user content while repairing the functional layout. It can update labels, controls, validation and formatting, and copy missing tabs from the official template. Existing tabs are not replaced by template copies.</li>
+<li><strong>Custom style:</strong> supported formatting is stored in and read from a hidden <code>_HF_STYLE</code> tab in your spreadsheet when you use the style features.</li>
+</ul>
+<p>These operations provide scans, editable results, reference tables and sheet maintenance. The app does not change spreadsheet sharing permissions. People who already have access to your spreadsheet may see the inputs and results under those permissions.</p>
+<h2>Local storage and retention</h2>
+<p>On Windows, <code>%APPDATA%\HotspotsFinder\token.json</code> stores OAuth tokens and <code>%APPDATA%\HotspotsFinder\config.json</code> stores connection configuration, including the chosen spreadsheet ID. These files are separate from the executable and persist between sessions. The app reads them on later runs and can refresh and update the saved token. They are JSON files, without additional encryption implemented by the app; protection depends on your computer's access controls.</p>
+<p>Scans also write local exports in the process's current working directory: <code>spansh_hotspots.csv</code>, <code>spansh_planets.csv</code> when the corresponding mode is enabled, <code>spansh_results.csv</code> and <code>summary.json</code>. These contain game results and scan information such as filters, counts and unresolved system queries. The working directory depends on how you launch the app. Files can be overwritten by later runs; there is no automatic time-based deletion.</p>
+<p>Spreadsheet results and saved styles remain in your Google account until you edit or remove them. The app has no developer-operated storage service for these data.</p>
+<h2>Services and sharing</h2>
+<p><strong>Google:</strong> authorization and spreadsheet operations communicate with Google. The connected spreadsheet and template are processed through Google's services.</p>
+<p><strong>Spansh:</strong> the app sends system names, including names read from your spreadsheet, and applicable game search criteria such as Faction, Power and Power State to Spansh's search APIs. This transfer is necessary to obtain the requested game data. The app does not send your Google OAuth tokens or full spreadsheet contents to Spansh.</p>
+<p>These services receive normal connection information such as your IP address. The app uses HTTPS for its API requests. v7.11 contains no developer telemetry, advertising or automatic upload of your tokens, configuration or spreadsheet to the maintainer. It does not implement sale of Google user data, advertising use, credit profiling or AI model training. Technical details displayed by the app are not automatically sent to the maintainer; anything you post in a public support issue becomes public.</p>
+<h2>Google API Services User Data Policy</h2>
+<p>ED Hotspots &amp; Landables Finder's use and transfer of information received from Google APIs adheres to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including its Limited Use requirements. Google data is used for the user-facing spreadsheet and scan features described above; transfers are limited to providing those features. This statement is not a claim that Google has verified or certified the app.</p>
+<h2>Revoke access and delete data</h2>
+<ol>
+<li>Open your <a href="https://myaccount.google.com/connections">Google Account's third-party connections</a>, select the app and remove its access.</li>
+<li>Close the app and delete <code>token.json</code> and <code>config.json</code> from <code>%APPDATA%\HotspotsFinder</code> to remove its saved local authorization and connection settings.</li>
+<li>Delete unwanted local CSV/JSON exports and edit or delete your Google Spreadsheet separately.</li>
+</ol>
+<p>Deleting local files alone does not revoke Google's authorization. Revoking authorization does not remove existing spreadsheet content or local exports. Connecting again requires authorization if no valid token is available.</p>
+<h2>This website</h2>
+<p>This static website uses no analytics scripts, advertising, forms or application cookies. Its styling is hosted locally. GitHub Pages hosts the site and logs visitor IP addresses for security. GitHub's handling of hosting data is described in the <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub Privacy Statement</a>. Following external links takes you to services with their own privacy practices.</p>
+<h2>Contact and changes</h2>
+<p>For privacy questions or to report a discrepancy, contact the maintainer through the <a href="https://github.com/LittleJacket99/ED-Hotspots-Landables-Finder/issues">project's GitHub issues</a>. Issues are public: do not include tokens, credentials, private spreadsheet contents or other personal information. Changes to app data handling will be reflected here with an updated date.</p>
+</main><footer><div class="wrap"><a href="/">Back to ED Hotspots &amp; Landables Finder</a></div></footer>
+</body></html>
