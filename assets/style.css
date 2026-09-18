@@ -105,7 +105,7 @@ h3{font-size:1.35rem;line-height:1.25;margin:8px 0 12px}
   display:block;
   width:100%;
   height:auto;
-  transform:scale(1.02);
+  transform:scale(1.);
   transform-origin:center center
 }
 #mining{padding-top:16px;padding-bottom:82px}
