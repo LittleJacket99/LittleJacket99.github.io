@@ -3,31 +3,188 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Google Search Console ownership verification: keep this tag after verification. -->
-  <meta name="google-site-verification" content="k4hZYZ_vrLq7zRPDFij9fX2xjZ0NKMF0BQsroGFSa1E" />
-  <title>ED Hotspots &amp; Landables Finder</title>
-  <meta name="description" content="Find mining hotspots and planets across Elite Dangerous systems, with Spansh data and results you can customize in Google Sheets.">
+  <!-- Google Search Console ownership verification: keep this tag. -->
+  <meta name="google-site-verification" content="k4hZYZ_vrLq7zRPDFij9fX2xjZ0NKMF0BQsroGFSa1E">
+  <title>ED Hotspots Finder - Rings &amp; Planets</title>
+  <meta name="description" content="Elite Dangerous multi-system mining research for rings, hotspots, planets and shared Community Deposits, with optional RhinoSpotter synchronization.">
   <link rel="canonical" href="https://littlejacket99.github.io/">
   <link rel="stylesheet" href="/assets/style.css">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
-<header><div class="wrap"><nav aria-label="Main navigation"><a class="brand" href="/">ED Hotspots &amp; Landables Finder</a><div class="nav-links"><a href="https://github.com/LittleJacket99/ED-Hotspots-Landables-Finder">GitHub</a><a href="/privacy/">Privacy Policy</a></div></nav></div></header>
-<main id="main" class="wrap">
-  <section class="hero">
-    <p class="eyebrow">Elite Dangerous · Desktop companion · v7.11</p>
-    <h1>Find your next<br>mining or planetary stop.</h1>
-    <p class="lead">Search multiple systems for mining hotspots and planets. Explore landability, volcanism and more, then make the results your own in Google Sheets.</p>
-    <div class="actions"><a class="button primary" href="https://github.com/LittleJacket99/ED-Hotspots-Landables-Finder/releases">View releases &amp; downloads</a><a class="button" href="https://github.com/LittleJacket99/ED-Hotspots-Landables-Finder">Explore the project</a></div>
-    <p class="note">The public Windows executable is being prepared. The current v7.11 release contains source code; a ready-to-run EXE is not yet available.</p>
+
+<header>
+  <div class="wrap">
+    <nav aria-label="Main navigation">
+      <a class="brand" href="/">ED Hotspots Finder</a>
+      <div class="nav-links">
+        <a href="#mining">Mining</a>
+        <a href="#community">Community Deposits</a>
+        <a href="#rhinospotter">RhinoSpotter</a>
+        <a href="https://github.com/LittleJacket99/ED-Hotspots-Finder-Rings-and-Planets">GitHub</a>
+        <a href="/privacy/">Privacy</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero wrap">
+    <img
+      class="hero-logo"
+      src="https://raw.githubusercontent.com/LittleJacket99/ED-Hotspots-Finder-Rings-and-Planets/main/ED_Hotspots_Finder.png"
+      alt="ED Hotspots Finder - Rings & Planets logo"
+    >
+    <p class="eyebrow">Elite Dangerous · Windows companion · v1.0.1</p>
+    <h1>Mining research across many systems, without checking them one by one.</h1>
+    <p class="lead">
+      Start from your own systems or narrow an area by Power, Power State, Faction and distance.
+      Then search the resulting systems for the rings, hotspots, planets and surface deposits you actually need.
+    </p>
+    <div class="actions">
+      <a class="button primary" href="https://github.com/LittleJacket99/ED-Hotspots-Finder-Rings-and-Planets/releases/latest">Download latest release</a>
+      <a class="button" href="https://github.com/LittleJacket99/ED-Hotspots-Finder-Rings-and-Planets">View on GitHub</a>
+    </div>
+    <div class="hero-tags" aria-label="Project focus">
+      <span>Ring mining</span>
+      <span>Surface mining</span>
+      <span>Community data</span>
+      <span>Powerplay research</span>
+    </div>
   </section>
-  <section class="grid" aria-label="Features">
-    <article class="card"><h2>Choose your systems</h2><p>Enter a manual list or discover systems through Faction. Narrow your search by Powerplay power and Power State.</p></article>
-    <article class="card"><h2>Focus your search</h2><p>Filter ring types, minerals and planet types. Use pristine, landable and Only positive results options to refine the output.</p></article>
-    <article class="card"><h2>Keep control</h2><p>Follow scan progress, open details or stop a scan cleanly. STOP does not publish a partial results table to your spreadsheet.</p></article>
+
+  <section class="wrap brief">
+    <p>
+      <strong>One workflow:</strong> define where to search, then filter for what must be there.
+      The app combines strategic system selection with mining and planetary data in a single desktop tool.
+    </p>
   </section>
-  <section class="wide"><h2>Spansh data. Your Google Sheet.</h2><p>The app queries <a href="https://spansh.co.uk/">Spansh</a> for game data and uses the Google Sheets API to read scan settings and write results to your connected spreadsheet. Google OAuth lets you authorize that connection in your browser.</p><p>Google Sheets is an intentional part of the tool: sort and filter results, add formulas, change formatting, create columns and tabs, or copy data for your own analysis without changing the program.</p><p><strong>Open Template</strong> opens the official <em>ED Hotspots &amp; Landables Finder</em> template for copying. <strong>Connect / Change Sheet</strong> connects your copy or another Google Spreadsheet; <strong>Open My Sheet</strong> opens the connected file. Missing required tabs are added from the template; existing tabs are not replaced by template copies. The main sheet's functional structure can be repaired.</p><p>Use <strong>Repair Sheet</strong>, <strong>Restore Official Style</strong> and <strong>Save Current Style</strong> to maintain or customize your sheet. The Minerals Table and Volcanism Table are editable references.</p></section>
-  <section class="card"><h2>Your data and authorization</h2><p>The app keeps its Google token and configuration on your computer. System names and search criteria are sent to Spansh to perform searches. Read the <a href="/privacy/">Privacy Policy</a> for the exact Google permissions, local files and ways to revoke access.</p></section>
+
+  <section class="wrap screenshot-section" aria-labelledby="results-title">
+    <div class="section-heading">
+      <p class="eyebrow">Multi-system results</p>
+      <h2 id="results-title">See useful systems together.</h2>
+      <p>Search results stay sortable and filterable inside the app, with CSV and XLSX export when you need them elsewhere.</p>
+    </div>
+    <div class="screenshot-frame">
+      <img
+        src="https://raw.githubusercontent.com/LittleJacket99/ED-Hotspots-Finder-Rings-and-Planets/main/docs/images/search-results.png"
+        alt="ED Hotspots Finder multi-system search results"
+      >
+    </div>
+  </section>
+
+  <section id="mining" class="wrap">
+    <div class="section-heading">
+      <p class="eyebrow">Mining focus</p>
+      <h2>Rings above. Deposits below.</h2>
+      <p>Use the same system list to investigate traditional ring mining and planetary surface resources.</p>
+    </div>
+
+    <div class="mining-grid">
+      <article class="card mining-card">
+        <div class="card-kicker">Asteroid &amp; ring mining</div>
+        <h3>Find the right rings and hotspots.</h3>
+        <p>Filter systems for ring types, hotspot commodities and reserve quality, including pristine-system searches.</p>
+        <ul class="feature-list">
+          <li>Ring type filters</li>
+          <li>Hotspot commodities</li>
+          <li>Pristine reserve filtering</li>
+          <li>Multi-system comparison</li>
+        </ul>
+      </article>
+
+      <article class="card mining-card surface-card">
+        <div class="card-kicker">Planetary &amp; surface mining</div>
+        <h3>Turn discoveries into reusable data.</h3>
+        <p>Search landable bodies and volcanism, then add known surface-mining locations through the Community Deposits database.</p>
+        <ul class="feature-list">
+          <li>Landable planet filtering</li>
+          <li>Volcanism information</li>
+          <li>Known surface deposits</li>
+          <li>Community-contributed reports</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <section id="community" class="community-band">
+    <div class="wrap community-layout">
+      <div>
+        <p class="eyebrow">Community Deposits</p>
+        <h2>A shared database for planetary mining discoveries.</h2>
+        <p class="lead-small">
+          Surface locations are much more useful when they do not stay on one commander's PC.
+          Community Deposits is designed to build a searchable collection of player-reported planetary deposits over time.
+        </p>
+        <div class="flow" aria-label="Community Deposits workflow">
+          <span>Discover</span><b>→</b><span>Bookmark</span><b>→</b><span>Synchronize</span><b>→</b><span>Share</span><b>→</b><span>Search</span>
+        </div>
+        <p class="muted">
+          The database is community-reported and still growing. Missing data does not mean a deposit is absent;
+          every contribution improves future searches.
+        </p>
+        <a class="text-link" href="https://github.com/LittleJacket99/ED-Hotspots-Finder-Rings-and-Planets/blob/main/docs/COMMUNITY_DEPOSITS.md">Read the Community Deposits documentation →</a>
+      </div>
+
+      <aside class="database-card">
+        <div class="database-icon" aria-hidden="true">◎</div>
+        <h3>Search and contribute</h3>
+        <p>ED Hotspots Finder can retrieve known deposits for the systems in your current search and can also synchronize compatible local discoveries.</p>
+      </aside>
+    </div>
+  </section>
+
+  <section id="rhinospotter" class="wrap rhino-section">
+    <div class="rhino-copy">
+      <p class="eyebrow">RhinoSpotter integration</p>
+      <h2>Bookmark in-game. Sync when you choose.</h2>
+      <p>
+        <a href="https://github.com/Fumlop/EDRhinoSpotter">RhinoSpotter</a>, developed independently by
+        <strong>Fumlop</strong>, is an EDMC plugin for recording planetary surface-mining locations while you play.
+      </p>
+      <p>
+        ED Hotspots Finder can detect RhinoSpotter's local bookmark database and synchronize compatible bookmarks
+        with Community Deposits. The integration is optional, user-triggered and reads the RhinoSpotter SQLite database in read-only mode.
+      </p>
+      <p class="muted">Current integration tested with RhinoSpotter 4.4.3. Legacy JSON cards remain supported as a fallback.</p>
+      <div class="actions compact">
+        <a class="button" href="https://github.com/Fumlop/EDRhinoSpotter">RhinoSpotter on GitHub</a>
+        <a class="button" href="https://github.com/LittleJacket99/ED-Hotspots-Finder-Rings-and-Planets/blob/main/docs/RHINOSPOTTER.md">Integration details</a>
+      </div>
+    </div>
+
+    <div class="rhino-callout">
+      <div class="flow vertical">
+        <span>RhinoSpotter bookmark</span>
+        <b>↓</b>
+        <span>ED Hotspots Finder sync</span>
+        <b>↓</b>
+        <span>Community Deposits</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap final-cta">
+    <p class="eyebrow">Open source · Windows</p>
+    <h2>Try the current release.</h2>
+    <p>Download the standalone executable or ZIP from GitHub Releases. Python is not required for the public Windows build.</p>
+    <div class="actions centered">
+      <a class="button primary" href="https://github.com/LittleJacket99/ED-Hotspots-Finder-Rings-and-Planets/releases/latest">Download ED Hotspots Finder</a>
+      <a class="button" href="https://github.com/LittleJacket99/ED-Hotspots-Finder-Rings-and-Planets/blob/main/README.md">Project documentation</a>
+    </div>
+  </section>
 </main>
-<footer><div class="wrap">Maintained by <a href="https://github.com/LittleJacket99">LittleJacket99</a> · <a href="/privacy/">Privacy Policy</a> · <a href="https://github.com/LittleJacket99/ED-Hotspots-Landables-Finder/blob/main/RELEASE_NOTES.md">Release notes</a><p>Independent community tool for Elite Dangerous. Not affiliated with Frontier Developments, Google or Spansh.</p></div></footer>
-</body></html>
+
+<footer>
+  <div class="wrap footer-grid">
+    <div>
+      Maintained by <a href="https://github.com/LittleJacket99">LittleJacket99</a>
+      · <a href="/privacy/">Privacy Policy</a>
+      · <a href="https://github.com/LittleJacket99/ED-Hotspots-Finder-Rings-and-Planets/releases/latest">Latest release</a>
+    </div>
+    <p>Independent community tool for Elite Dangerous. Not affiliated with Frontier Developments, Spansh or RhinoSpotter.</p>
+  </div>
+</footer>
+</body>
+</html>
