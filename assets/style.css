@@ -108,6 +108,14 @@ h3{font-size:1.35rem;line-height:1.25;margin:8px 0 12px}
   transform:scale(1.);
   transform-origin:center center
 }
+.plugin-shot{
+  margin-left:auto;
+  margin-right:auto;
+  margin-bottom:24px
+}
+.plugin-panel-shot{max-width:620px}
+.plugin-results-shot{max-width:900px}
+.plugin-tracker-shot{max-width:300px}
 #mining{padding-top:16px;padding-bottom:82px}
 .mining-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
 .card{
