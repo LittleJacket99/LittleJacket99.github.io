@@ -1,6 +1,6 @@
-# ED Hotspots Finder - Rings & Planets Website
+# ED Hotspots Finder - Rings & Planets + EDMC Plugin Website
 
-Official GitHub Pages site for **ED Hotspots Finder - Rings & Planets**, an open-source Windows companion for **Elite Dangerous**.
+Official GitHub Pages site for the **ED Hotspots Finder - Rings & Planets** and **Hotspots Finder EDMC Plugin** project for **Elite Dangerous**.
 
 **Live website:** https://littlejacket99.github.io/  
 **Main project:** https://github.com/LittleJacket99/ED-Hotspots-Finder-Rings-and-Planets-with-EDMC-plugin  
@@ -8,24 +8,26 @@ Official GitHub Pages site for **ED Hotspots Finder - Rings & Planets**, an open
 
 ## About the site
 
-The website is the public landing page for ED Hotspots Finder and focuses on the parts of the project most useful to commanders looking for mining and planetary data:
+The website is the public landing page for the two connected tools:
 
-- multi-system search and filtering;
-- **Rings & Asteroids Mining**;
-- **Planets & Surface Mining**;
+- **ED Hotspots Finder - Rings & Planets** — desktop multi-system search, filtering and analysis;
+- **Hotspots Finder EDMC Plugin** — in-game Community Deposits lookup, RhinoSpotter synchronization and selected-deposit navigation.
+
+It also documents the shared parts of the ecosystem:
+
+- Rings & Asteroids Mining;
+- Planets & Surface Mining;
 - the shared **Community Deposits** database;
-- optional **RhinoSpotter** bookmark synchronization;
-- links to the Windows download, source code and project documentation.
-
-The general workflow is simple: define the systems or search area, then find the rings, hotspots, planets and known surface deposits that match the required conditions.
+- RhinoSpotter 5.1+ `rs_api.py` integration;
+- links to the Windows Finder executable, EDMC Plugin ZIP, source code and project documentation.
 
 ## Community Deposits
 
-Community Deposits is a shared database of player-reported planetary surface-mining locations.
+Community Deposits is the shared database used by both the Finder and EDMC Plugin for player-reported planetary surface-mining locations.
 
 **Discover → Bookmark → Synchronize → Share → Search**
 
-Compatible RhinoSpotter bookmarks can be synchronized through ED Hotspots Finder so useful discoveries can become searchable by other commanders.
+Compatible RhinoSpotter bookmarks can be synchronized through either client so useful discoveries can become searchable by other commanders.
 
 RhinoSpotter is an independent EDMC plugin developed by **Fumlop** and is not bundled with this project.
 
@@ -36,19 +38,22 @@ RhinoSpotter is an independent EDMC plugin developed by **Fumlop** and is not bu
 - `privacy/index.html` — privacy policy
 - `.nojekyll` — serves the repository as a simple static GitHub Pages site
 
-The logo and application screenshot are loaded from the public ED Hotspots Finder repository so the website remains aligned with the current application assets.
+Application and plugin screenshots are loaded from the public project repository so the website remains aligned with the current interface.
 
 ## Privacy
 
-The privacy page documents the current desktop application's use of:
+The privacy page documents the current tools' use of:
 
-- local application settings;
-- Spansh requests;
-- Community Deposits queries and synchronization;
-- read-only access to the local RhinoSpotter database;
-- local CSV/XLSX exports.
+- local Finder and EDMC Plugin configuration;
+- Spansh requests from the Finder;
+- Community Deposits queries and explicit synchronization;
+- RhinoSpotter 5.1+ `rs_api.py` access;
+- read-only Finder fallbacks for older RhinoSpotter SQLite/JSON storage;
+- EDMC / Elite Dangerous status data used locally for deposit navigation;
+- local CSV/XLSX exports;
+- public GitHub release update checks.
 
-The current application does **not** use the Google Sheets/OAuth workflow from the older pre-v1.0 tool.
+The current project does **not** use the Google Sheets/OAuth workflow from the older pre-v1.0 tool.
 
 ## Hosting
 
@@ -58,4 +63,4 @@ It is intentionally lightweight and uses no JavaScript framework, analytics, adv
 
 ## Project status
 
-The website follows the current public release line of **ED Hotspots Finder - Rings & Planets** and links to the main repository for releases, documentation, issues and source code.
+The website follows the current public **v1.0.2** release and links to the main repository for releases, documentation, issues and source code.
