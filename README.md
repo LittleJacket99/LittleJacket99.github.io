@@ -3,8 +3,8 @@
 Official GitHub Pages site for **ED Hotspots Finder - Rings & Planets**, an open-source Windows companion for **Elite Dangerous**.
 
 **Live website:** https://littlejacket99.github.io/  
-**Main project:** https://github.com/LittleJacket99/ED-Hotspots-Finder-Rings-and-Planets  
-**Latest release:** https://github.com/LittleJacket99/ED-Hotspots-Finder-Rings-and-Planets/releases/latest
+**Main project:** https://github.com/LittleJacket99/ED-Hotspots-Finder-Rings-and-Planets-with-EDMC-plugin  
+**Latest release:** https://github.com/LittleJacket99/ED-Hotspots-Finder-Rings-and-Planets-with-EDMC-plugin/releases/latest
 
 ## About the site
 
