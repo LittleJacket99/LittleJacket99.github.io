@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Privacy Policy · ED Hotspots Finder - Rings &amp; Planets</title>
-  <meta name="description" content="Privacy information for ED Hotspots Finder - Rings & Planets and the Community Deposits integration.">
+  <title>Privacy Policy · ED Hotspots Finder + EDMC Plugin</title>
+  <meta name="description" content="Privacy information for ED Hotspots Finder - Rings & Planets, Hotspots Finder EDMC Plugin and Community Deposits integration.">
   <link rel="canonical" href="https://littlejacket99.github.io/privacy/">
   <link rel="stylesheet" href="/assets/style.css">
 </head>
@@ -13,7 +13,7 @@
 <header>
   <div class="wrap">
     <nav aria-label="Main navigation">
-      <a class="brand" href="/"><span class="brand-title">ED Hotspots Finder</span><span class="brand-subtitle">Rings &amp; Planets</span></a>
+      <a class="brand" href="/"><span class="brand-title">ED Hotspots Finder</span><span class="brand-subtitle">Rings &amp; Planets + EDMC Plugin</span></a>
       <div class="nav-links">
         <a href="/">Home</a>
         <a href="https://github.com/LittleJacket99/ED-Hotspots-Finder-Rings-and-Planets-with-EDMC-plugin">GitHub</a>
@@ -26,60 +26,86 @@
 <main id="main" class="wrap policy">
   <p class="eyebrow">Your data</p>
   <h1>Privacy Policy</h1>
-  <p class="muted">Last updated: September 18, 2026 · Applies to ED Hotspots Finder - Rings &amp; Planets v1.0.1 and this website.</p>
+  <p class="muted">Last updated: September 20, 2026 · Applies to ED Hotspots Finder - Rings &amp; Planets v1.0.2, Hotspots Finder EDMC Plugin v1.0.2 and this website.</p>
 
   <p>
-    ED Hotspots Finder - Rings &amp; Planets is an open-source Windows companion for Elite Dangerous maintained by
-    <a href="https://github.com/LittleJacket99">LittleJacket99</a>. It can query public/community game-data services,
-    save local application settings, export results on request and optionally synchronize compatible RhinoSpotter bookmarks with Community Deposits.
+    ED Hotspots Finder - Rings &amp; Planets and Hotspots Finder EDMC Plugin are open-source Elite Dangerous companion tools maintained by
+    <a href="https://github.com/LittleJacket99">LittleJacket99</a>.
+    They can query public/community game-data services, store local configuration and optionally synchronize compatible RhinoSpotter bookmarks with Community Deposits.
   </p>
 
-  <h2>Local application settings</h2>
-  <p>The application stores its settings locally in:</p>
+  <h2>Local configuration</h2>
+  <p>The desktop Finder stores its settings locally in:</p>
   <p><code>%APPDATA%\HotspotsFinder\config.json</code></p>
   <p>
-    This can include interface preferences, startup filter defaults, the configured RhinoSpotter data path and related application options.
-    The current app does not use Google OAuth or require a Google account.
+    This can include interface preferences, startup filter defaults, RhinoSpotter options and related application settings.
+    The Finder does not require a Google account or Google OAuth.
+  </p>
+  <p>
+    The EDMC Plugin stores its own plugin configuration through EDMarketConnector, including information needed for features such as the configured Finder executable and tracker position.
   </p>
 
   <h2>Spansh</h2>
   <p>
     ED Hotspots Finder uses <a href="https://spansh.co.uk/">Spansh</a> to resolve Elite Dangerous system names and retrieve system/body data.
-    Search inputs relevant to those requests, such as system names and applicable search criteria, are sent to Spansh when required to perform the search.
+    Search inputs relevant to those requests, such as system names and applicable search criteria, are sent to Spansh when required to perform a search.
   </p>
 
   <h2>Community Deposits</h2>
   <p>
-    Community Deposits is an online community database of player-reported planetary surface deposits.
-    When Community Deposits is enabled during a search, the app sends the relevant system names to the Community Deposits service so that matching reports can be returned.
+    Community Deposits is an online database of player-reported planetary surface deposits used by both the Finder and EDMC Plugin.
   </p>
   <p>
-    When you explicitly start a RhinoSpotter synchronization, compatible bookmark data is prepared and sent to the Community Deposits service.
-    This can include game-location fields such as system, body, material, coordinates and compatible report metadata recorded by RhinoSpotter.
-    Synchronization is user-triggered; the app does not continuously upload RhinoSpotter data in the background.
+    When Community Deposits is searched, the relevant system name or names are sent to the Community Deposits service so matching records can be returned.
+  </p>
+  <p>
+    When you explicitly start RhinoSpotter synchronization, compatible bookmark data is prepared and sent to Community Deposits.
+    Depending on the bookmark, this can include game-location and deposit information such as system, body, Location, material, Rigs, Amount, Density, coordinates, heading, body metadata and depletion information.
+  </p>
+  <p>
+    Synchronization is user-triggered. Neither the Finder nor the EDMC Plugin continuously uploads RhinoSpotter bookmarks in the background.
   </p>
 
   <h2>RhinoSpotter local data</h2>
   <p>
     RhinoSpotter is an independent EDMC plugin developed by Fumlop.
-    Current RhinoSpotter releases store bookmarks in a local SQLite database, normally located at:
+    RhinoSpotter 5.1+ exposes a documented external API at:
   </p>
-  <p><code>%LOCALAPPDATA%\RhinoSpotter\db\rhinospotter.db</code></p>
+  <p><code>%LOCALAPPDATA%\EDMarketConnector\plugins\RhinoSpotter\rs_api.py</code></p>
   <p>
-    ED Hotspots Finder opens that database in read-only mode for detection and synchronization.
-    It does not modify the RhinoSpotter database. Legacy JSON card folders are supported as a fallback.
+    Both ED Hotspots Finder and the EDMC Plugin can read compatible bookmark information through that API.
+    The EDMC Plugin uses <code>rs_api.py</code> only.
+  </p>
+  <p>
+    For compatibility with older RhinoSpotter installations, the desktop Finder can also read the local SQLite bookmark database in read-only mode and legacy JSON card folders.
+    It does not modify RhinoSpotter's database.
+  </p>
+
+  <h2>Elite Dangerous / EDMarketConnector status data</h2>
+  <p>
+    The EDMC Plugin uses the current Elite Dangerous system reported by EDMarketConnector for current-system Community Deposits lookup.
+    When you start tracking a selected deposit, it uses live status data exposed through EDMarketConnector / Elite Dangerous <code>Status.json</code> to calculate navigation information such as distance, bearing and relative direction.
+  </p>
+  <p>
+    This navigation status is used locally for the tracker and is not described here as an automatic Community Deposits upload.
   </p>
 
   <h2>Exports</h2>
   <p>
-    CSV and XLSX exports are created only when you choose to export results.
+    CSV and XLSX exports are created only when you choose to export Finder results.
     Those files are written locally to the destination you select and are not automatically uploaded to the maintainer.
+  </p>
+
+  <h2>Update checks</h2>
+  <p>
+    Finder and EDMC Plugin can check the project's public GitHub Releases endpoint for a newer version.
+    A successful check compares the installed version with the latest public release; installation is not performed automatically.
   </p>
 
   <h2>Telemetry, advertising and accounts</h2>
   <p>
-    The application does not require an ED Hotspots Finder account and does not include advertising.
-    The published project does not implement developer analytics or automatic telemetry reporting.
+    The project does not require an ED Hotspots Finder account and does not include advertising.
+    The published tools do not implement developer analytics or automatic telemetry reporting.
     Normal network services may still receive standard connection information such as your IP address when you use them.
   </p>
 
@@ -93,8 +119,8 @@
 
   <h2>Third-party services and projects</h2>
   <p>
-    Spansh, GitHub and RhinoSpotter are independent services/projects with their own policies and maintainers.
-    ED Hotspots Finder is not affiliated with Frontier Developments, Spansh or RhinoSpotter.
+    Spansh, GitHub, EDMarketConnector and RhinoSpotter are independent services/projects with their own policies and maintainers.
+    ED Hotspots Finder and Hotspots Finder EDMC Plugin are not affiliated with Frontier Developments, Spansh or RhinoSpotter.
   </p>
 
   <h2>Contact and changes</h2>
@@ -102,7 +128,7 @@
     For privacy questions or to report a discrepancy, use the
     <a href="https://github.com/LittleJacket99/ED-Hotspots-Finder-Rings-and-Planets-with-EDMC-plugin/issues">project's GitHub issues</a>.
     Issues are public, so do not include private files, credentials or other sensitive information.
-    Material changes to the app's data handling will be reflected on this page.
+    Material changes to the tools' data handling will be reflected on this page.
   </p>
 </main>
 
